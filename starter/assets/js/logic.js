@@ -5,6 +5,8 @@ let mainText = document.querySelector("#mainText")
 let button2 = document.querySelector("#button2")
 let button3 = document.querySelector("#button3")
 let button4 = document.querySelector("#button4")
+let button5 = document.querySelector("#button5")
+let questionNo
 
 // Array containing questions
 
@@ -22,16 +24,39 @@ let questions = [
 startButton.addEventListener("click", function () {
   currentTime = 10
   header.classList.add("hide")
+  startButton.classList.add("hide")
   button2.classList.remove("hide")
   button3.classList.remove("hide")
   button4.classList.remove("hide")
+  button5.classList.remove("hide")
 
+  questionNo = 0
+  mainText.innerHTML = questions[questionNo]
+  
+  button2.addEventListener("click", function() {
+    button2.classList.add("isClicked")
+    mainText.innerHTML = questions[questionNo++]
+    button2.classList.remove("isClicked")
+  })
 
-  // add a for loop here
-  mainText.innerHTML = " "
-// for (let index = 0; index < questions.length; index++) {
-//   mainText.innerHTML = questions[index]
-// }
+  button3.addEventListener("click", function() {
+    button3.classList.add("isClicked")
+    mainText.innerHTML = questions[questionNo++]
+    button3.classList.remove("isClicked")
+  })
+
+  button4.addEventListener("click", function() {
+    button4.classList.add("isClicked")
+    mainText.innerHTML = questions[questionNo++]
+    button4.classList.remove("isClicked")
+  })
+
+  button5.addEventListener("click", function() {
+    button5.classList.add("isClicked")
+    mainText.innerHTML = questions[questionNo++]
+    button5.classList.remove("isClicked")
+  })
+  
     
 setInterval(function() {
         if (currentTime > 0) {
