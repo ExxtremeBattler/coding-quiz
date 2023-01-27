@@ -18,6 +18,15 @@ let questions = [
     "Is it necessary to end each line of code with a semicolon in Javascript?"
 ]
 
+function endGame() {
+  mainText.innerHTML = "Thanks for playing!"
+  button2.classList.add("hide")
+  button3.classList.add("hide")
+  button4.classList.add("hide")
+  button5.classList.add("hide")
+  currentTime = 0
+ }
+
 
 // Once start is clicked, begin the countdown
 
@@ -37,6 +46,10 @@ startButton.addEventListener("click", function () {
   function getNextQuestion() {
     mainText.innerHTML = questions[questionNo++]
     console.log(questionNo)
+
+    if (questionNo === questions.length){
+      endGame()
+    }
   }
   
   button2.addEventListener("click", function() {
@@ -55,17 +68,6 @@ startButton.addEventListener("click", function () {
     getNextQuestion()
   })
 
-  function endGame() {
-   mainText.innerHTML = "Thanks for playing!"
-   button2.classList.add("hide")
-   button3.classList.add("hide")
-   button4.classList.add("hide")
-   button5.classList.add("hide")
-  }
-
-  if (questionNo === questions.length){
-    endGame()
-  }
     
    setInterval(function() {
         if (currentTime > 0) {
