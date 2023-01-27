@@ -32,6 +32,7 @@ startButton.addEventListener("click", function () {
   button5.classList.remove("hide")
 
   mainText.innerHTML = questions[questionNo]
+  questionNo++
 
   function getNextQuestion() {
     mainText.innerHTML = questions[questionNo++]
