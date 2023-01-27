@@ -6,7 +6,7 @@ let button2 = document.querySelector("#button2")
 let button3 = document.querySelector("#button3")
 let button4 = document.querySelector("#button4")
 let button5 = document.querySelector("#button5")
-let questionNo
+let questionNo = 0
 
 // Array containing questions
 
@@ -22,6 +22,7 @@ let questions = [
 // Once start is clicked, begin the countdown
 
 startButton.addEventListener("click", function () {
+  console.log(questions)
   currentTime = 10
   header.classList.add("hide")
   startButton.classList.add("hide")
@@ -30,43 +31,53 @@ startButton.addEventListener("click", function () {
   button4.classList.remove("hide")
   button5.classList.remove("hide")
 
-  questionNo = 0
   mainText.innerHTML = questions[questionNo]
+
+  function getNextQuestion() {
+    mainText.innerHTML = questions[questionNo++]
+    console.log(questionNo)
+  }
   
   button2.addEventListener("click", function() {
-    button2.classList.add("isClicked")
-    mainText.innerHTML = questions[questionNo++]
-    button2.classList.remove("isClicked")
+    getNextQuestion()
   })
 
   button3.addEventListener("click", function() {
-    button3.classList.add("isClicked")
-    mainText.innerHTML = questions[questionNo++]
-    button3.classList.remove("isClicked")
+    getNextQuestion()
   })
 
   button4.addEventListener("click", function() {
-    button4.classList.add("isClicked")
-    mainText.innerHTML = questions[questionNo++]
-    button4.classList.remove("isClicked")
+    getNextQuestion()
   })
 
   button5.addEventListener("click", function() {
-    button5.classList.add("isClicked")
-    mainText.innerHTML = questions[questionNo++]
-    button5.classList.remove("isClicked")
+    getNextQuestion()
   })
-  
+
+  function endGame() {
+   mainText.innerHTML = "Thanks for playing!"
+   button2.classList.add("hide")
+   button3.classList.add("hide")
+   button4.classList.add("hide")
+   button5.classList.add("hide")
+  }
+
+  if (questionNo === questions.length){
+    endGame()
+  }
     
-setInterval(function() {
+   setInterval(function() {
         if (currentTime > 0) {
           currentTime--;
           document.querySelector("#time").innerHTML = currentTime
-          console.log(currentTime);
         }
-      }, 1000
-      )
-    });
+        else if (currentTime === 0){
+          endGame()
+        }
+      }, 1000)
+
+    }
+    );
 
   
 
