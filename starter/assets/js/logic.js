@@ -42,10 +42,10 @@ startButton.addEventListener("click", function () {
   button5.classList.remove("hide")
 
   function firstQuestionLogic() {
-    button2.innerHTML = "Quotes"
-    button3.innerHTML = "Curly Braces"
-    button3.innerHTML = "Square Brackets"
-    button4.innerHTML = "Parentheses"
+    button2.innerHTML = "Bananas"
+    button3.innerHTML = "Strings"
+    button4.innerHTML = "Alerts"
+    button5.innerHTML = "Numbers"
 
     button2.addEventListener("click", function() {
       score++
@@ -67,10 +67,10 @@ startButton.addEventListener("click", function () {
   }
 
   function secondQuestionLogic() {
-    button2.innerHTML = "Bananas"
-    button3.innerHTML = "Strings"
-    button3.innerHTML = "Alerts"
-    button4.innerHTML = "Numbers"
+    button2.innerHTML = "Quotes"
+    button3.innerHTML = "Curly Braces"
+    button4.innerHTML = "Square Brackets"
+    button5.innerHTML = "Parentheses"
 
     // once:true stops the event from being invoked more than once
 
@@ -87,10 +87,40 @@ startButton.addEventListener("click", function () {
     }, { once: true })
   
     button5.addEventListener("click", function() {
+      score++
       getNextQuestion()
     }, { once: true })
     
   }
+
+  function thirdQuestionLogic() {
+    button2.innerHTML = "Strings"
+    button3.innerHTML = "Numbers"
+    button3.innerHTML = "Arrays"
+    button4.innerHTML = "All the above"
+
+    // once:true stops the event from being invoked more than once
+
+    button2.addEventListener("click", function() {
+      getNextQuestion()
+    } , { once: true } )
+  
+    button3.addEventListener("click", function() {
+      getNextQuestion()
+    }, { once: true })
+  
+    button4.addEventListener("click", function() {
+      getNextQuestion()
+    }, { once: true })
+  
+    button5.addEventListener("click", function() {
+      score++
+      getNextQuestion()
+    }, { once: true })
+    
+  }
+
+  
 
 
   mainText.innerHTML = questions[questionNo]
