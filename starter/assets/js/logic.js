@@ -8,10 +8,18 @@ let button4 = document.querySelector("#button4")
 let button5 = document.querySelector("#button5")
 let questionNo = 0
 let score = 0
+let firstClicked = false
+let secondClicked = false
+let thirdClicked = false
+let fourthClicked = false
+let fifthClicked = false
+
+
 
 // Array containing questions
 
 let questions = [
+  "",
     "Commonly used data types DO NOT include :",
     "The condition in an if/else statement is enclosed within : ",
     "Arrays in Javascript can be used to store : ",
@@ -42,29 +50,39 @@ startButton.addEventListener("click", function () {
   button5.classList.remove("hide")
 
   function firstQuestionLogic() {
-    button2.innerHTML = "Bananas"
-    button3.innerHTML = "Strings"
-    button4.innerHTML = "Alerts"
-    button5.innerHTML = "Numbers"
+   button2.innerHTML = "Bananas"
+   button3.innerHTML = "Strings"
+   button4.innerHTML = "Alerts"
+   button5.innerHTML = "Numbers"
 
-    button2.addEventListener("click", function() {
-      score++
-      getNextQuestion()
-    },{ once: true })
-  
-    button3.addEventListener("click", function() {
-      getNextQuestion()
-    },{ once: true })
-  
-    button4.addEventListener("click", function() {
-      getNextQuestion()
-    }, { once: true })
-  
-    button5.addEventListener("click", function() {
-      getNextQuestion()
-    }, { once: true })
-    
-  }
+   // once:true stops the EventListener from being invoked more than once
+
+   button2.addEventListener("click", function() {
+     score++
+     firstClicked = true
+     getNextQuestion()
+     return
+   })
+ 
+   button3.addEventListener("click", function() {
+    firstClicked = true
+     getNextQuestion()
+     return
+   })
+ 
+   button4.addEventListener("click", function() {
+    firstClicked = true
+     getNextQuestion()
+     return
+   })
+ 
+   button5.addEventListener("click", function() {
+    firstClicked = true
+     getNextQuestion()
+     return
+   })
+   
+ }
 
   function secondQuestionLogic() {
     button2.innerHTML = "Quotes"
@@ -72,69 +90,153 @@ startButton.addEventListener("click", function () {
     button4.innerHTML = "Square Brackets"
     button5.innerHTML = "Parentheses"
 
-    // once:true stops the event from being invoked more than once
-
     button2.addEventListener("click", function() {
+      secondClicked = true
       getNextQuestion()
-    } , { once: true } )
+    }  )
   
     button3.addEventListener("click", function() {
+      secondClicked = true
       getNextQuestion()
-    }, { once: true })
+    })
   
     button4.addEventListener("click", function() {
+      secondClicked = true
       getNextQuestion()
-    }, { once: true })
+    })
   
     button5.addEventListener("click", function() {
+      secondClicked = true
       score++
       getNextQuestion()
-    }, { once: true })
+    })
     
   }
 
   function thirdQuestionLogic() {
     button2.innerHTML = "Strings"
     button3.innerHTML = "Numbers"
-    button3.innerHTML = "Arrays"
-    button4.innerHTML = "All the above"
+    button4.innerHTML = "Arrays"
+    button5.innerHTML = "All the above"
 
     // once:true stops the event from being invoked more than once
 
     button2.addEventListener("click", function() {
+      thirdClicked = true
       getNextQuestion()
-    } , { once: true } )
+    }  )
   
     button3.addEventListener("click", function() {
+      thirdClicked = true
+
       getNextQuestion()
-    }, { once: true })
+    })
   
     button4.addEventListener("click", function() {
+      thirdClicked = true
       getNextQuestion()
-    }, { once: true })
+    })
   
     button5.addEventListener("click", function() {
+      thirdClicked = true
       score++
       getNextQuestion()
-    }, { once: true })
+    })
     
   }
 
+  function fourthQuestionLogic() {
+    button2.innerHTML = "Curly Braces"
+    button3.innerHTML = "Quotes"
+    button4.innerHTML = "Square Brackets"
+    button5.innerHTML = "Parentheses"
+
+    button2.addEventListener("click", function() {
+      fourthClicked = true
+      getNextQuestion()
+    }  )
   
+    button3.addEventListener("click", function() {
+      fourthClicked = true
+      score++
+      getNextQuestion()
+    })
+  
+    button4.addEventListener("click", function() {
+      fourthClicked = true
+      getNextQuestion()
+    })
+  
+    button5.addEventListener("click", function() {
+      fourthClicked = true
+      getNextQuestion()
+    })
+    
+  }
+
+  function fifthQuestionLogic() {
+    button2.innerHTML = "Yes"
+    button3.innerHTML = "Only when assigning variables"
+    button4.innerHTML = "No"
+    button5.innerHTML = "Only at the end of function declarations"
+
+    button2.addEventListener("click", function() {
+      fifthClicked = true
+      getNextQuestion()
+    }  )
+  
+    button3.addEventListener("click", function() {
+      fifthClicked = true
+      getNextQuestion()
+    })
+  
+    button4.addEventListener("click", function() {
+      fifthClicked = true
+      score++
+      getNextQuestion()
+    })
+  
+    button5.addEventListener("click", function() {
+      fifthClicked = true
+      getNextQuestion()
+    })
+    
+  }
 
 
   mainText.innerHTML = questions[questionNo]
   firstQuestionLogic()
-  questionNo++
+  
+  if(firstClicked === true) {
+    secondQuestionLogic()
+  }
+  
+  if(secondClicked === true) {
+      thirdQuestionLogic()
+    }
+  
+  if(thirdClicked === true){
+    fourthQuestionLogic()
+  }
+  if(fourthClicked === true){
+    fifthQuestionLogic()
+  }
+  
 
   function getNextQuestion() {
     mainText.innerHTML = questions[questionNo++]
+    questionNo = questionNo++
     console.log(questionNo)
 
     if (questionNo === questions.length){
       endGame()
     }
   }
+
+  // function getNextButtons() {
+  //   if ques
+    
+  // }
 
   // while
 
