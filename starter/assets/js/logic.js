@@ -7,6 +7,7 @@ let button3 = document.querySelector("#button3")
 let button4 = document.querySelector("#button4")
 let button5 = document.querySelector("#button5")
 let questionNo = 0
+let score = 0
 
 // Array containing questions
 
@@ -32,7 +33,7 @@ function endGame() {
 
 startButton.addEventListener("click", function () {
   console.log(questions)
-  currentTime = 10
+  currentTime = 15
   header.classList.add("hide")
   startButton.classList.add("hide")
   button2.classList.remove("hide")
@@ -40,7 +41,59 @@ startButton.addEventListener("click", function () {
   button4.classList.remove("hide")
   button5.classList.remove("hide")
 
+  function firstQuestionLogic() {
+    button2.innerHTML = "Quotes"
+    button3.innerHTML = "Curly Braces"
+    button3.innerHTML = "Square Brackets"
+    button4.innerHTML = "Parentheses"
+
+    button2.addEventListener("click", function() {
+      score++
+      getNextQuestion()
+    })
+  
+    button3.addEventListener("click", function() {
+      getNextQuestion()
+    })
+  
+    button4.addEventListener("click", function() {
+      getNextQuestion()
+    })
+  
+    button5.addEventListener("click", function() {
+      getNextQuestion()
+    })
+    
+  }
+
+  function secondQuestionLogic() {
+    button2.innerHTML = "Bananas"
+    button3.innerHTML = "Strings"
+    button3.innerHTML = "Alerts"
+    button4.innerHTML = "Numbers"
+
+    button2.addEventListener("click", function() {
+      score++
+      getNextQuestion()
+    })
+  
+    button3.addEventListener("click", function() {
+      getNextQuestion()
+    })
+  
+    button4.addEventListener("click", function() {
+      getNextQuestion()
+    })
+  
+    button5.addEventListener("click", function() {
+      getNextQuestion()
+    })
+    
+  }
+
+
   mainText.innerHTML = questions[questionNo]
+  firstQuestionLogic()
   questionNo++
 
   function getNextQuestion() {
@@ -51,22 +104,9 @@ startButton.addEventListener("click", function () {
       endGame()
     }
   }
-  
-  button2.addEventListener("click", function() {
-    getNextQuestion()
-  })
 
-  button3.addEventListener("click", function() {
-    getNextQuestion()
-  })
+  // while
 
-  button4.addEventListener("click", function() {
-    getNextQuestion()
-  })
-
-  button5.addEventListener("click", function() {
-    getNextQuestion()
-  })
 
     
    setInterval(function() {
