@@ -50,19 +50,19 @@ startButton.addEventListener("click", function () {
     button2.addEventListener("click", function() {
       score++
       getNextQuestion()
-    })
+    },{ once: true })
   
     button3.addEventListener("click", function() {
       getNextQuestion()
-    })
+    },{ once: true })
   
     button4.addEventListener("click", function() {
       getNextQuestion()
-    })
+    }, { once: true })
   
     button5.addEventListener("click", function() {
       getNextQuestion()
-    })
+    }, { once: true })
     
   }
 
