@@ -13,6 +13,7 @@ let secondClicked = false
 let thirdClicked = false
 let fourthClicked = false
 let fifthClicked = false
+let counter = 0
 
 
 
@@ -80,10 +81,7 @@ startButton.addEventListener("click", function () {
 //  }
 
 //   function secondQuestionLogic() {
-//     button2.innerHTML = "Quotes"
-//     button3.innerHTML = "Curly Braces"
-//     button4.innerHTML = "Square Brackets"
-//     button5.innerHTML = "Parentheses"
+//     
 
 //     button2.addEventListener("click", function() {
 //       secondClicked = true
@@ -109,10 +107,6 @@ startButton.addEventListener("click", function () {
 //   }
 
 //   function thirdQuestionLogic() {
-//     button2.innerHTML = "Strings"
-//     button3.innerHTML = "Numbers"
-//     button4.innerHTML = "Arrays"
-//     button5.innerHTML = "All the above"
 
 //     // once:true stops the event from being invoked more than once
 
@@ -140,10 +134,7 @@ startButton.addEventListener("click", function () {
 //   }
 
 //   function fourthQuestionLogic() {
-//     button2.innerHTML = "Curly Braces"
-//     button3.innerHTML = "Quotes"
-//     button4.innerHTML = "Square Brackets"
-//     button5.innerHTML = "Parentheses"
+  
 
 //     button2.addEventListener("click", function() {
 //       fourthClicked = true
@@ -169,10 +160,6 @@ startButton.addEventListener("click", function () {
 //   }
 
 //   function fifthQuestionLogic() {
-//     button2.innerHTML = "Yes"
-//     button3.innerHTML = "Only when assigning variables"
-//     button4.innerHTML = "No"
-//     button5.innerHTML = "Only at the end of function declarations"
 
 //     button2.addEventListener("click", function() {
 //       fifthClicked = true
@@ -231,6 +218,39 @@ startButton.addEventListener("click", function () {
   function getNextQuestion() {
     mainText.innerHTML = questions[questionNo++]
     console.log(questionNo)
+    counter++
+    console.log(counter)
+
+    if (counter === 1){
+      button2.innerHTML = "Quotes"
+      button3.innerHTML = "Curly Braces"
+      button4.innerHTML = "Square Brackets"
+      button5.innerHTML = "Parentheses"
+    }
+
+    if (counter === 2){
+      button2.innerHTML = "Strings"
+      button3.innerHTML = "Numbers"
+      button4.innerHTML = "Arrays"
+      button5.innerHTML = "All the above"
+
+    }
+
+    if (counter === 3){
+      button2.innerHTML = "Curly Braces"
+      button3.innerHTML = "Quotes"
+      button4.innerHTML = "Square Brackets"
+      button5.innerHTML = "Parentheses"
+    }
+
+    if (counter === 4){
+      button2.innerHTML = "Yes"
+      button3.innerHTML = "Only when assigning variables"
+      button4.innerHTML = "No"
+      button5.innerHTML = "Only at the end of function declarations"
+
+    }
+
 
     if (questionNo === questions.length){
       endGame()
