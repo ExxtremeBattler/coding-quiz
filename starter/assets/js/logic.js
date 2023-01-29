@@ -23,11 +23,14 @@ let questions = [
 ]
 
 function endGame() {
-  mainText.innerHTML = "Thanks for playing!"
+  
+  mainText.innerHTML = ("Thanks for playing! Here's your score: " +score)
+  
   button2.classList.add("hide")
   button3.classList.add("hide")
   button4.classList.add("hide")
   button5.classList.add("hide")
+  
   currentTime = 0
  }
 
@@ -35,8 +38,8 @@ function endGame() {
 // Once start is clicked, begin the countdown
 
 startButton.addEventListener("click", function () {
-  console.log(questions)
   currentTime = 15
+ 
   header.classList.add("hide")
   startButton.classList.add("hide")
   button2.classList.remove("hide")
@@ -47,8 +50,8 @@ startButton.addEventListener("click", function () {
   mainText.innerHTML = questions[questionNo]
   questionNo++
 
-   button2.innerHTML = "Bananas"
-   button3.innerHTML = "Strings"
+   button2.innerHTML = "Strings"
+   button3.innerHTML = "Bananas"
    button4.innerHTML = "Alerts"
    button5.innerHTML = "Numbers"
 
@@ -79,16 +82,16 @@ startButton.addEventListener("click", function () {
 
     if (counter === 1){
       button2.innerHTML = "Quotes"
-      button3.innerHTML = "Curly Braces"
+      button3.innerHTML = "Parentheses"
       button4.innerHTML = "Square Brackets"
-      button5.innerHTML = "Parentheses"
+      button5.innerHTML = "Curly Braces"
     }
 
     if (counter === 2){
       button2.innerHTML = "Strings"
-      button3.innerHTML = "Numbers"
+      button3.innerHTML = "All the above"
       button4.innerHTML = "Arrays"
-      button5.innerHTML = "All the above"
+      button5.innerHTML = "Numbers"
 
     }
 
@@ -101,8 +104,8 @@ startButton.addEventListener("click", function () {
 
     if (counter === 4){
       button2.innerHTML = "Yes"
-      button3.innerHTML = "Only when assigning variables"
-      button4.innerHTML = "No"
+      button3.innerHTML = "No"
+      button4.innerHTML = "Only when assigning variables"
       button5.innerHTML = "Only at the end of function declarations"
 
     }
