@@ -1,6 +1,7 @@
 let currentTime = document.querySelector("#time").innerHTML
 let startButton = document.querySelector("#start")
 let header = document.querySelector("h1")
+let endScreen = document.querySelector("#end-screen")
 let mainText = document.querySelector("#mainText")
 let button2 = document.querySelector("#button2")
 let button3 = document.querySelector("#button3")
@@ -32,6 +33,8 @@ function endGame() {
   button5.classList.add("hide")
   
   currentTime = 0
+
+  endScreen.classList.remove("hide")
  }
 
 
