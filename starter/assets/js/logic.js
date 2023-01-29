@@ -252,7 +252,7 @@ startButton.addEventListener("click", function () {
     }
 
 
-    if (questionNo === questions.length){
+    if (questionNo > questions.length){
       endGame()
     }
   }
