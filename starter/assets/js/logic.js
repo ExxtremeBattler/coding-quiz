@@ -38,7 +38,7 @@ function endGame() {
 // Once start is clicked, begin the countdown
 
 startButton.addEventListener("click", function () {
-  currentTime = 15
+  currentTime = 30
  
   header.classList.add("hide")
   startButton.classList.add("hide")
@@ -57,20 +57,22 @@ startButton.addEventListener("click", function () {
 
   
        button2.addEventListener("click", function() {
+         currentTime -=5
          getNextQuestion()
        })
      
        button3.addEventListener("click", function() {
-        score++
+         score++
          getNextQuestion()
        })
      
        button4.addEventListener("click", function() {
-        firstClicked = true
+         currentTime -=5
          getNextQuestion()
        })
      
        button5.addEventListener("click", function() {
+         currentTime -=5
          getNextQuestion()
        })
 
