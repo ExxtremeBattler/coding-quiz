@@ -8,11 +8,6 @@ let button4 = document.querySelector("#button4")
 let button5 = document.querySelector("#button5")
 let questionNo = 0
 let score = 0
-let firstClicked = false
-let secondClicked = false
-let thirdClicked = false
-let fourthClicked = false
-let fifthClicked = false
 let counter = 0
 
 
@@ -49,142 +44,6 @@ startButton.addEventListener("click", function () {
   button4.classList.remove("hide")
   button5.classList.remove("hide")
 
-//   function firstQuestionLogic() {
-//    button2.innerHTML = "Bananas"
-//    button3.innerHTML = "Strings"
-//    button4.innerHTML = "Alerts"
-//    button5.innerHTML = "Numbers"
-
-//    button2.addEventListener("click", function() {
-//      score++
-//      firstClicked = true
-//      getNextQuestion()
-//    })
- 
-//    button3.addEventListener("click", function() {
-//     firstClicked = true
-//      getNextQuestion()
-//    })
- 
-//    button4.addEventListener("click", function() {
-//     firstClicked = true
-//      getNextQuestion()
-//    })
- 
-//    button5.addEventListener("click", function() {
-//     firstClicked = true
-//      getNextQuestion()
-//    })
-
-//    return
-   
-//  }
-
-//   function secondQuestionLogic() {
-//     
-
-//     button2.addEventListener("click", function() {
-//       secondClicked = true
-//       getNextQuestion()
-//     }  )
-  
-//     button3.addEventListener("click", function() {
-//       secondClicked = true
-//       getNextQuestion()
-//     })
-  
-//     button4.addEventListener("click", function() {
-//       secondClicked = true
-//       getNextQuestion()
-//     })
-  
-//     button5.addEventListener("click", function() {
-//       secondClicked = true
-//       score++
-//       getNextQuestion()
-//     })
-    
-//   }
-
-//   function thirdQuestionLogic() {
-
-//     // once:true stops the event from being invoked more than once
-
-//     button2.addEventListener("click", function() {
-//       thirdClicked = true
-//       getNextQuestion()
-//     }  )
-  
-//     button3.addEventListener("click", function() {
-//       thirdClicked = true
-//       getNextQuestion()
-//     })
-  
-//     button4.addEventListener("click", function() {
-//       thirdClicked = true
-//       getNextQuestion()
-//     })
-  
-//     button5.addEventListener("click", function() {
-//       thirdClicked = true
-//       score++
-//       getNextQuestion()
-//     })
-    
-//   }
-
-//   function fourthQuestionLogic() {
-  
-
-//     button2.addEventListener("click", function() {
-//       fourthClicked = true
-//       getNextQuestion()
-//     }  )
-  
-//     button3.addEventListener("click", function() {
-//       fourthClicked = true
-//       score++
-//       getNextQuestion()
-//     })
-  
-//     button4.addEventListener("click", function() {
-//       fourthClicked = true
-//       getNextQuestion()
-//     })
-  
-//     button5.addEventListener("click", function() {
-//       fourthClicked = true
-//       getNextQuestion()
-//     })
-    
-//   }
-
-//   function fifthQuestionLogic() {
-
-//     button2.addEventListener("click", function() {
-//       fifthClicked = true
-//       getNextQuestion()
-//     }  )
-  
-//     button3.addEventListener("click", function() {
-//       fifthClicked = true
-//       getNextQuestion()
-//     })
-  
-//     button4.addEventListener("click", function() {
-//       fifthClicked = true
-//       score++
-//       getNextQuestion()
-//     })
-  
-//     button5.addEventListener("click", function() {
-//       fifthClicked = true
-//       getNextQuestion()
-//     })
-    
-//   }
-
-
   mainText.innerHTML = questions[questionNo]
   questionNo++
 
@@ -195,13 +54,11 @@ startButton.addEventListener("click", function () {
 
   
        button2.addEventListener("click", function() {
-         score++
-         firstClicked = true
          getNextQuestion()
        })
      
        button3.addEventListener("click", function() {
-        firstClicked = true
+        score++
          getNextQuestion()
        })
      
@@ -211,7 +68,6 @@ startButton.addEventListener("click", function () {
        })
      
        button5.addEventListener("click", function() {
-        firstClicked = true
          getNextQuestion()
        })
 
