@@ -2,6 +2,7 @@ let currentTime = document.querySelector("#time").innerHTML
 let startButton = document.querySelector("#start")
 let header = document.querySelector("h1")
 let endScreen = document.querySelector("#end-screen")
+let submitButton = document.querySelector("#submit")
 let mainText = document.querySelector("#mainText")
 let button2 = document.querySelector("#button2")
 let button3 = document.querySelector("#button3")
@@ -35,7 +36,24 @@ function endGame() {
   currentTime = 0
 
   endScreen.classList.remove("hide")
- }
+
+  submitButton.addEventListener("click", function(event){
+    event.preventDefault();
+
+  var initials = document.querySelector("#initials").value;
+  var playerScore = score
+  
+  if (initials === "") {
+    alert("error");
+  }
+  else {
+    alert("success");
+
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("score", playerScore);
+  }
+})}
+  
 
 
 // Once start is clicked, begin the countdown
@@ -143,4 +161,4 @@ startButton.addEventListener("click", function () {
 
 
 
-
+  
